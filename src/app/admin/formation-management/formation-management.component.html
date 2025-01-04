@@ -1,0 +1,26 @@
+<div class="container mt-4">
+    <h2>Gestion des Formations</h2>
+    <button class="btn btn-primary mb-3" (click)="addFormation(newFormation)">Ajouter une Formation</button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Titre</th>
+          <th>Description</th>
+          <th>Charge Horaire</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+            @for( formation of formations; track $index){
+          <td>{{ formation.name }}</td>
+          <td>{{ formation.description }}</td>
+          <td>{{ formation.chargeHoraire }}</td>
+          <td>
+            <button class="btn btn-info" (click)="editFormation(formation)">Modifier</button>
+            <button class="btn btn-danger" (click)="deleteFormation(formation.id)">Supprimer</button>
+          </td>}
+        </tr>
+      </tbody>
+    </table>
+  </div>

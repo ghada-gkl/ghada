@@ -1,0 +1,19 @@
+nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a.active {
+    color: #007bff;
+  }
+  

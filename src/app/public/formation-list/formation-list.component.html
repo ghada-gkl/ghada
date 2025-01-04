@@ -1,0 +1,28 @@
+<div class="formation-list container mt-4">
+  <h1>Rechercher une Formation</h1>
+  <input
+    type="text"
+    class="form-control my-3"
+    placeholder="Rechercher par mot-clé"
+    ngModel="searchQuery" 
+    (input)="filterFormations()"
+  />
+
+  <div class="formations row">
+    @for (formation of filteredFormations; track $index) {
+      <div class="formation-item col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">{{ formation.name }}</h2> 
+            <p class="card-text">{{ formation.description }}</p>
+            <a routerLink="['/public/formations', formation.id]" 
+              class="btn btn-primary"
+            >
+              Voir les détails
+            </a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

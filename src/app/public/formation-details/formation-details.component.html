@@ -1,0 +1,24 @@
+<div class="container mt-4">
+    @if (formation) {
+        <h2>{{ formation.title }}</h2>
+        <p>{{ formation.description }}</p>
+        <p><strong>Charge Horaire :</strong> {{ formation.chargeHoraire }} heures</p>
+        <button (click)="downloadPDF()" class="btn btn-secondary">Télécharger le programme</button>
+      
+        <h3 class="mt-4">Sessions Disponibles</h3>
+        @for ( session of formation.sessions;track $index) {
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ session.description }}</h5>
+                    <p><strong>Dates :</strong> {{ session.startDate }} - {{ session.endDate }}</p>
+                    <button 
+                        [disabled]="isFull(session)" 
+                        (click)="register($index)" 
+                        class="btn btn-primary">
+                        {{ isFull(session) ? 'Complet' : 'S\'inscrire' }}
+                    </button>
+                </div>
+            </div>
+        }
+    }
+</div>

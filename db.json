@@ -1,0 +1,42 @@
+{
+    "formations": [
+      {
+        "id": 1,
+        "name": "Développement Web",
+        "description": "Apprenez les bases du développement web avec Angular.",
+        "programUrl": "path/to/web-development-program.pdf",
+        "chargeHoraire": 30,
+        "level": "beginner",
+        "categories": ["Développement"],
+        "sessions": [
+          {
+            "startDate": "2024-01-10",
+            "endDate": "2024-02-15",
+            "description": "Session du matin",
+            "formateurs": [
+              {
+                "id": 1,
+                "firstName": "Alice",
+                "lastName": "Dupont",
+                "email": "alice@example.com",
+                "phoneNumber": "123456789",
+                "specialties": ["Angular", "JavaScript"]
+              }
+            ],
+            "candidates": []
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Design UX/UI",
+        "description": "Maîtrisez les principes de design pour des interfaces réussies.",
+        "programUrl": "path/to/ux-ui-design-program.pdf",
+        "chargeHoraire": 25,
+        "level": "intermediate",
+        "categories": ["Design"],
+        "sessions": []
+      }
+    ]
+  }
+  

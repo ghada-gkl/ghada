@@ -1,0 +1,102 @@
+<div class="container mt-4">
+    <h2>Gestion des Candidats</h2>
+  
+    <form (ngSubmit)="registerCandidate(candidatForm)" #candidatForm="ngForm">
+      <div class="form-group">
+        <label for="candidat-firstname">Prénom du Candidat*</label>
+        <input
+          type="text"
+          id="candidat-firstname"
+          class="form-control"
+          name="candidatFirstName"
+          ngModel
+          #candidatFirstName="ngModel"
+          required
+          placeholder="Prénom"
+        />
+        @if (candidatFirstName.invalid && candidatFirstName.touched) {
+          <div class="error">Ce champ est obligatoire!</div>
+        }
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="candidat-lastname">Nom du Candidat*</label>
+        <input
+          type="text"
+          id="candidat-lastname"
+          class="form-control"
+          name="candidatLastName"
+          ngModel
+          #candidatLastName="ngModel"
+          required
+          placeholder="Nom"
+        />
+        @if (candidatLastName.invalid && candidatLastName.touched) {
+          <div class="error">Ce champ est obligatoire!</div>
+        }
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="candidat-email">Email*</label>
+        <input
+          type="email"
+          id="candidat-email"
+          class="form-control"
+          name="candidatEmail"
+          ngModel="candidatEmail"
+          #candidatEmailInput="ngModel"
+          required
+          placeholder="Email"
+        />
+        @if (candidatEmailInput.invalid && candidatEmailInput.touched) {
+          <div class="error">Ce champ est obligatoire!</div>
+        }
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="formation-id">ID de Formation*</label>
+        <input
+          type="number"
+          id="formation-id"
+          class="form-control"
+          name="formationId"
+          ngModel
+          #formationId="ngModel"
+          required
+          placeholder="Formation ID"
+        />
+        @if (formationId.invalid && formationId.touched) {
+          <div class="error">Ce champ est obligatoire!</div>
+        }
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="session-index">Index de la Session*</label>
+        <input
+          type="number"
+          id="session-index"
+          class="form-control"
+          name="sessionIndex"
+          ngModel
+          #sessionIndex="ngModel"
+          required
+          placeholder="Session Index"
+        />
+        @if (sessionIndex.invalid && sessionIndex.touched) {
+          <div class="error">Ce champ est obligatoire!</div>
+        }
+      </div>
+  
+      <button
+        type="submit"
+        class="btn btn-primary mt-4"
+        [disabled]="candidatForm.invalid"
+      >
+        Enregistrer le Candidat
+      </button>
+    </form>
+  
+    @if (message) {
+      <p class="mt-3">{{ message }}</p>
+    }
+</div>
